@@ -1,0 +1,12 @@
+__pycache__
+dkdata
+*.pyc
+.coverage
+coverage.xml
+htmlcov/
+.idea
+/djavuolei.log
+/static
+.env
+.venv
+.vscode
