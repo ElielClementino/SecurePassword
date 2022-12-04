@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 from base.forms.password_forms import passwordForm
 from base.service import password_svc
 from django.http import JsonResponse
