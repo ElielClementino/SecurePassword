@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY", 'DSsdsndikndiwuhe&@HE73y8idn2323232sidjwd*@H83hj')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG")
+DEBUG = config("DEBUG", True)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -78,11 +78,11 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
-        "NAME": config("POSTGRES_DB"),
-        "USER": config("POSTGRES_USER"),
-        "PASSWORD": config("POSTGRES_PASSWORD"),
-        "HOST": config("POSTGRES_HOST"),
-        "PORT": config("POSTGRES_PORT"),
+        "NAME": config("POSTGRES_DB", "default"),
+        "USER": config("POSTGRES_USER", "default"),
+        "PASSWORD": config("POSTGRES_PASSWORD", "default"),
+        "HOST": config("POSTGRES_HOST", "default"),
+        "PORT": config("POSTGRES_PORT", 5432),
     }
 }
 
@@ -109,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = config("LANGUAGE_CODE")
+LANGUAGE_CODE = "pt-br"
 
-TIME_ZONE = config("TIME_ZONE")
+TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
 
