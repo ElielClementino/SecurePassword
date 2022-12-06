@@ -1,4 +1,4 @@
-DEBUG=1
+DEBUG=True
 SECRET_KEY="yours"
 POSTGRES_DB="yours"
 POSTGRES_USER="yours"
