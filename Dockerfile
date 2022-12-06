@@ -1,4 +1,5 @@
 FROM python:3.8.10
+RUN mkdir securepassword
 WORKDIR /securepassword
 COPY . .
 RUN pip install -r requirements.txt
