@@ -8,4 +8,4 @@ class SecurePassword(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=120, null=True, blank=True)
-    password = models.ManyToManyField(SecurePassword, on_delete=models.CASCADE, related_name="group_password", null=True, blank=True)
+    password = models.ManyToManyField(SecurePassword, related_name="group_password", blank=True)
