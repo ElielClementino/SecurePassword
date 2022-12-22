@@ -28,6 +28,17 @@ services:
       - secure-password
     depends_on:
       - postgres
+    restart: on-failure
+  
+  frontend:
+    build: ./frontend/securepassword
+    ports:
+      - 8080:8080
+    networks:
+      - secure-password
+    depends_on:
+      - backend
+    restart: on-failure
 
 volumes:
   postgres_data:
