@@ -29,11 +29,11 @@ services:
     depends_on:
       - postgres
     restart: on-failure
-  
+
   frontend:
-    build: ./frontend/securepassword
+    build: ./frontend
     ports:
-      - 8080:8080
+      - 3000:3000
     networks:
       - secure-password
     depends_on:
