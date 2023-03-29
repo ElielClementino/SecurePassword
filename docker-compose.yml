@@ -1,14 +1,17 @@
-version: "3.3"
+version: "3"
 
 services:
   postgres:
     image: postgres:13.3-alpine
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_secure:/var/lib/postgresql/data
     networks:
       - secure-password
-    env_file:
-      - .env
+    environment:
+      POSTGRES_DB: securepassword
+      POSTGRES_USER: securepassword
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_PORT: 5432
     ports:
       - 5432:5432
     restart: on-failure
@@ -26,6 +29,16 @@ services:
       - 8000:8000
     networks:
       - secure-password
+    command:
+      ./manage.py runserver 0.0.0.0:8080
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: securepassword
+      POSTGRES_USER: securepassword
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
     depends_on:
       - postgres
     restart: on-failure
@@ -41,7 +54,7 @@ services:
     restart: on-failure
 
 volumes:
-  postgres_data:
+  postgres_secure:
   nginx_data:
 
 networks:
