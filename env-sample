@@ -1,7 +1,7 @@
 DEBUG=True
-SECRET_KEY="yours"
-POSTGRES_DB="yours"
-POSTGRES_USER="yours"
-POSTGRES_PASSWORD="yours"
-POSTGRES_HOST="yours"
+SECRET_KEY=yours
+POSTGRES_DB=localhost
+POSTGRES_USER=securepassword
+POSTGRES_PASSWORD=securepassword
+POSTGRES_HOST=securepassword
 POSTGRES_PORT=5432
