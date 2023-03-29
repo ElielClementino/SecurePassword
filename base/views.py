@@ -1,5 +1,5 @@
 from base.forms.password_forms import passwordForm
-from base.service import password_svc
+from base.services import password_svc
 from django.http import JsonResponse
 import json
 
