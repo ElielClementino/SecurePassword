@@ -25,4 +25,4 @@ def generate_password(data):
 
     generated_password = ''.join(map(str, generated_password))
 
-    return generated_password, len(generated_password)
+    return generated_password
